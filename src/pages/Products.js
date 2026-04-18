@@ -1,0 +1,1 @@
+import {useState} from 'react'; const items=['Apple','Milk']; export default function Products(){const [c,setC]=useState([]); return(<div><h2>Products</h2>{items.map((i,idx)=><div key={idx}>{i}<button onClick={()=>setC([...c,i])}>Add</button></div>)}<h3>Cart</h3>{c.map((i,idx)=><div key={idx}>{i}</div>)}</div>)}
