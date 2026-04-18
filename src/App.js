@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -9,7 +9,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <h1>Grocery SPA</h1>
       <nav>
         <Link to="/">Home</Link> | 
@@ -25,6 +25,6 @@ export default function App() {
         <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login"/>} />
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
